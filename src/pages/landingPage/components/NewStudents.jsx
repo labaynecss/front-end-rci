@@ -2,9 +2,8 @@ import React from "react";
 import YouTube from "react-youtube";
 import { motion } from "framer-motion";
 import { AiFillCheckCircle } from "react-icons/ai";
-import { offers } from "../../../data";
-import Carosel from "../../../components/Carosel";
-import { useState, useEffect } from "react";
+import { offers } from "../../../data"; // import Carosel from "../../../components/Carosel";
+// import { useState, useEffect } from "react";
 
 function Features() {
   const currentYear = new Date().getFullYear();
