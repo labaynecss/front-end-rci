@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HAMBURGER MENU */
+body {
+  overflow-x: hidden;
+}
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+  background: #000;
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+  position: fixed;
+  top: 50px;
+  right: 25px;
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  background-color: #fff;
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  background-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  /* color-scheme: dark; */
+  font-family: teko;
+  /* outline: 1px solid red; */
+}
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+
+  background-color: #e8aa42;
+  content: "";
+
+  background-color: #833ab4;
+  content: "";
+
+  transition: width 0.2s;
+}
+
+.underlineHover:hover:after {
+  width: 100%;
+}
+
+.active {
+  padding: 3px;
+  border-bottom: 2px solid #e8aa42;
+  pointer-events: none;
+}
+.hover {
+  box-shadow: inset 0 0 0 0 #833ab4;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.hover:hover {
+  box-shadow: inset 130px 0 0 0 #833ab4;
+  color: white;
+}
+.circle {
+  clip-path: circle(600px at right 800px);
+  z-index: 1;
+}
+
+.circle2 {
+  clip-path: circle(400px at left 80px);
+  z-index: -1;
+}
+
+.nav {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #833ab4;
+  border-radius: 5px;
+}
+.bgs {
+  height: 100%;
+  /* background: linear-gradient(90deg, #ecac44 50%, #833ab4 50%); */
+}
+
+.h1 {
+  font-size: clamp(1rem, 10vmin, 2.5rem);
+  color: hsl(0, 2%, 34%);
+}
+
+.underlined {
+  /*   background: red; */
+  position: relative;
+}
+
+.underline-clip:after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  width: 150%;
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6px solid #833ab4;
+  /* Use a clip-path to hide and show the bits you want */
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  /* text-align: center; */
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hide {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.text-shadow {
+  text-shadow: -4px 4px 7px rgba(218, 217, 214, 0.8);
+}
+
+.background-image {
+  background-image: url(./assets/images/bgbg.jpg);
+}
+
+.glow-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0 0 10px 5px #00c3ff;
+  opacity: 0;
+  animation: glow-animation 2s ease-in-out infinite;
+}
+
+@keyframes glow-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px 10px #2295f3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.shadow-left {
+  box-shadow: -10px 0 20px -5px rgba(126, 125, 125, 0.4);
+}
+
+.background {
+  background: rgb(220, 160, 251);
+  background: radial-gradient(
+    circle,
+    rgba(220, 160, 251, 1) 0%,
+    rgba(255, 255, 255, 1) 58%
+  );
+}
+.bluring {
+  background: rgb(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
